@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+              http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy>
+        <aop:include name="aopBeanSimple"/>
+    </aop:aspectj-autoproxy>
+
+    <aop:config>
+        <aop:aspect ref="aopBeanSimple">
+            <aop:pointcut id="logMethods" expression="execution(* com.zenika.bean.*.set*(..)) or execution(* com.zenika.bean.*.toString())"/>
+
+            <aop:before method="log" pointcut-ref="logMethods"/>
+            <aop:around method="measure" pointcut="execution(* com.zenika..*.multiply(int))"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!--<bean id="audit" class="com.zenika.AuditFactoryPostProcessor"/>-->
+
+    <bean id="monitorFactory" class="com.jamonapi.MonitorFactory"/>
+
+
+    <bean class="com.zenika.aop.AopBeanSimple" id="aopBeanSimple" c:records-ref="records"/>
+
+
+    <bean class="com.zenika.bean.BeanAir" id="beanAir"/>
+    <bean class="com.zenika.bean.BeanFeu" id="beanFeu"/>
+    <bean class="com.zenika.bean.BeanTerre" id="beanTerre"/>
+    
+    <bean class="com.zenika.bean.ServiceImpl" id="service"/>
+
+    <bean id="records" class="java.lang.StringBuilder"/>
+
+</beans>

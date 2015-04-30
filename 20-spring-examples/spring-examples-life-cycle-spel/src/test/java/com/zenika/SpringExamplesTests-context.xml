@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean">
+        <property name="databasePopulator" ref="populator"/>
+    </bean>
+
+    <bean id="populator" class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
+        <property name="scripts">
+            <list>
+                <value>classpath:com/zenika/testdb/schema.sql</value>
+                <value>classpath:com/zenika/testdb/test-data.sql</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="auditBeanPostFactoryBean" class="com.zenika.AuditFactoryPostProcessor"/>
+
+    <bean id="auditBeanPostProcessor" class="com.zenika.AuditPostProcessor"/>
+
+    <bean id="auditBean" class="com.zenika.AuditBeanFactory"/>
+
+
+    <bean id="finalBean1" class="com.zenika.bean.FinalBean" p:auditBean-ref="auditBean">
+        <property name="messageType">
+            <util:constant static-field="com.zenika.Constantes.MESSAGE_TYPE_TEST"/>
+        </property>
+    </bean>
+
+    <bean id="finalBean2" class="com.zenika.bean.FinalBean" p:auditBean-ref="auditBean" p:messageType="UAT"/>
+
+    <bean id="finalBean3" class="com.zenika.bean.FinalBean"
+          p:auditBean-ref="auditBean"
+          p:messageType="#{T(com.zenika.Constantes).MESSAGE_TYPE_PROD}"/>
+
+</beans>

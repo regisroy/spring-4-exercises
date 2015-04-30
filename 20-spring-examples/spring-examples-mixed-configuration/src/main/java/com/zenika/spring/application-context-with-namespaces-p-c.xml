@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="auditFactoryPostProcessor" class="com.zenika.tech.AuditFactoryPostProcessor"/>
+
+    <!-- VILLES -->
+    <bean id="cergy" class="com.zenika.ville.Ville" p:nom="Cergy"/>
+    <bean id="paris" class="com.zenika.ville.Ville" p:nom="Paris"/>
+    <bean id="versailles" class="com.zenika.ville.Ville" p:nom="Versailles"/>
+    <bean id="saintDenis" class="com.zenika.ville.Ville" p:nom="Saint-Denis"/>
+    <bean id="bobiny" class="com.zenika.ville.Ville" p:nom="Bobiny"/>
+    <bean id="grenoble" class="com.zenika.ville.Ville" p:nom="Grenoble"/>
+    <bean id="bourgEnBresse" class="com.zenika.ville.Ville" p:nom="Bourg-en-Bresse"/>
+
+
+    <!-- DEPARTEMENTS -->
+    <bean id="seine" class="com.zenika.departement.Departement" c:id="75" c:nom="Seine" c:prefecture-ref="paris" c:villes-ref="paris"/>
+
+    <util:list id="villes93">
+        <ref bean="saintDenis"/>
+        <ref bean="bobiny"/>
+    </util:list>
+    <bean id="seineSaintDenis" class="com.zenika.departement.Departement"
+          c:id="#{T(com.zenika.departement.Departement).SEINE_SAINT_DENIS_ID}"
+          c:nom="#{T(com.zenika.departement.Departement).SEINE_SAINT_DENIS}" c:prefecture-ref="saintDenis"
+          c:villes-ref="villes93"/>
+    <bean id="valDOise" class="com.zenika.departement.Departement" c:id="#{T(com.zenika.departement.Departement).VAL_D_OISE_ID}"
+          c:nom="#{T(com.zenika.departement.Departement).VAL_D_OISE}"
+          c:prefecture-ref="cergy"
+          c:villes-ref="cergy"/>
+    <bean id="yvelines" class="com.zenika.departement.Departement" c:id="#{T(com.zenika.departement.Departement).YVELINES_ID}"
+          c:nom="#{T(com.zenika.departement.Departement).YVELINES}"
+          c:prefecture-ref="versailles"
+          c:villes-ref="versailles"/>
+    <bean id="isere" class="com.zenika.departement.Departement" c:id="#{T(com.zenika.departement.Departement).ISERE_ID}"
+          c:nom="#{T(com.zenika.departement.Departement).ISERE}"
+          c:prefecture-ref="grenoble"
+          c:villes-ref="grenoble"/>
+    <bean id="ain" class="com.zenika.departement.Departement" c:id="#{T(com.zenika.departement.Departement).AIN_ID}"
+          c:nom="#{T(com.zenika.departement.Departement).AIN}"
+          c:prefecture-ref="bourgEnBresse"
+          c:villes-ref="bourgEnBresse"/>
+
+
+    <!-- REGIONS -->
+    <util:list id="deptsIleDeFrance">
+        <ref bean="seine"/>
+        <ref bean="seineSaintDenis"/>
+        <ref bean="yvelines"/>
+        <ref bean="valDOise"/>
+    </util:list>
+    <bean id="ileDeFrance" class="com.zenika.region.Region" c:nom="#{T(com.zenika.region.Region).ILE_DE_FRANCE}"
+          c:departements-ref="deptsIleDeFrance"/>
+
+    <util:list id="deptsRhonesAlpes">
+        <ref bean="isere"/>
+        <ref bean="ain"/>
+    </util:list>
+    <bean id="rhonesAlpes" class="com.zenika.region.Region" c:nom="#{T(com.zenika.region.Region).RHONES_ALPES}"
+          c:departements-ref="deptsRhonesAlpes"/>
+
+    <!-- PAYS -->
+    <util:list id="regionsFrance">
+        <ref bean="ileDeFrance"/>
+        <ref bean="rhonesAlpes"/>
+    </util:list>
+    <bean id="france" class="com.zenika.pays.Pays" c:nom="#{T(com.zenika.pays.Pays).FRANCE}" c:regions-ref="regionsFrance"/>
+
+    <!-- REPOSITORIES -->
+    <util:set id="villes">
+        <ref bean="cergy"/>
+        <ref bean="versailles"/>
+        <ref bean="saintDenis"/>
+        <ref bean="paris"/>
+        <ref bean="bobiny"/>
+        <ref bean="grenoble"/>
+        <ref bean="bourgEnBresse"/>
+    </util:set>
+    <bean id="villeRepositroy" class="com.zenika.ville.VilleInMemoryRepository" c:villes-ref="villes"/>
+
+    <util:list id="departements">
+        <ref bean="valDOise"/>
+        <ref bean="seine"/>
+        <ref bean="yvelines"/>
+        <ref bean="seineSaintDenis"/>
+        <ref bean="isere"/>
+        <ref bean="ain"/>
+    </util:list>
+    <bean id="departementRepositroy" class="com.zenika.departement.DepartementInMemoryRepository" c:departements-ref="departements"/>
+
+    <util:list id="regions">
+        <ref bean="ileDeFrance"/>
+        <ref bean="rhonesAlpes"/>
+    </util:list>
+    <bean id="regionRepositroy" class="com.zenika.region.RegionInMemoryRepository" c:regions-ref="regions"/>
+
+    <bean id="paysRepositroy" class="com.zenika.pays.PaysInMemoryRepository" c:payses-ref="france"/>
+</beans>

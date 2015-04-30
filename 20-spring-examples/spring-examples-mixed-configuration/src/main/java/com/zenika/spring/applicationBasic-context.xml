@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="auditFactoryPostProcessor" class="com.zenika.tech.AuditFactoryPostProcessor"/>
+
+    <!-- VILLES -->
+    <bean id="cergy" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).CERGY}"/>
+    </bean>
+    <bean id="paris" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).PARIS}"/>
+    </bean>
+    <bean id="versailles" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).VERSAILLES}"/>
+    </bean>
+    <bean id="saintDenis" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).SAINT_DENIS}"/>
+    </bean>
+    <bean id="bobiny" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).BOBINY}"/>
+    </bean>
+    <bean id="grenoble" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).GRENOBLE}"/>
+    </bean>
+    <bean id="bourgEnBresse" class="com.zenika.ville.Ville">
+        <property name="nom" value="#{T(com.zenika.ville.Ville).BOURG_EN_BRESSE}"/>
+    </bean>
+
+    <!-- DEPARTEMENTS -->
+    <bean id="seine" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).SEINE_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).SEINE}"/>
+        <constructor-arg name="prefecture" ref="paris"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="paris"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="seineSaintDenis" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).SEINE_SAINT_DENIS_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).SEINE_SAINT_DENIS}"/>
+        <constructor-arg name="prefecture" ref="saintDenis"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="saintDenis"/>
+                <ref bean="bobiny"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="valDOise" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).VAL_D_OISE_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).VAL_D_OISE}"/>
+        <constructor-arg name="prefecture" ref="cergy"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="cergy"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="yvelines" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).YVELINES_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).YVELINES}"/>
+        <constructor-arg name="prefecture" ref="versailles"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="versailles"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="isere" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).ISERE_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).ISERE}"/>
+        <constructor-arg name="prefecture" ref="grenoble"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="grenoble"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="ain" class="com.zenika.departement.Departement">
+        <constructor-arg name="id" value="#{T(com.zenika.departement.Departement).AIN_ID}"/>
+        <constructor-arg name="nom" value="#{T(com.zenika.departement.Departement).AIN}"/>
+        <constructor-arg name="prefecture" ref="bourgEnBresse"/>
+        <constructor-arg name="villes">
+            <array>
+                <ref bean="bourgEnBresse"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <!-- REGIONS -->
+    <bean id="ileDeFrance" class="com.zenika.region.Region">
+        <constructor-arg name="nom" value="#{T(com.zenika.region.Region).ILE_DE_FRANCE}"/>
+        <constructor-arg name="departements">
+            <array>
+                <ref bean="seine"/>
+                <ref bean="seineSaintDenis"/>
+                <ref bean="yvelines"/>
+                <ref bean="valDOise"/>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id="rhonesAlpes" class="com.zenika.region.Region">
+        <constructor-arg name="nom" value="#{T(com.zenika.region.Region).RHONES_ALPES}"/>
+        <constructor-arg name="departements">
+            <array>
+                <ref bean="isere"/>
+                <ref bean="ain"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <!-- PAYS -->
+    <bean id="france" class="com.zenika.pays.Pays">
+        <constructor-arg name="nom" value="#{T(com.zenika.pays.Pays).FRANCE}"/>
+        <constructor-arg name="regions">
+            <array>
+                <ref bean="ileDeFrance"/>
+                <ref bean="rhonesAlpes"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <!-- REPOSITORIES -->
+    <bean id="villeRepositroy" class="com.zenika.ville.VilleInMemoryRepository">
+        <constructor-arg name="villes">
+            <set>
+                <ref bean="cergy"/>
+                <ref bean="versailles"/>
+                <ref bean="saintDenis"/>
+                <ref bean="paris"/>
+                <ref bean="bobiny"/>
+                <ref bean="grenoble"/>
+                <ref bean="bourgEnBresse"/>
+            </set>
+        </constructor-arg>
+    </bean>
+    <bean id="departementRepositroy" class="com.zenika.departement.DepartementInMemoryRepository">
+        <constructor-arg name="departements">
+            <array>
+                <ref bean="valDOise"/>
+                <ref bean="seine"/>
+                <ref bean="yvelines"/>
+                <ref bean="seineSaintDenis"/>
+                <ref bean="isere"/>
+                <ref bean="ain"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <bean id="regionRepositroy" class="com.zenika.region.RegionInMemoryRepository">
+        <constructor-arg name="regions">
+            <array>
+                <ref bean="ileDeFrance"/>
+                <ref bean="rhonesAlpes"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <bean id="paysRepositroy" class="com.zenika.pays.PaysInMemoryRepository">
+        <constructor-arg name="payses">
+            <array>
+                <ref bean="france"/>
+            </array>
+        </constructor-arg>
+    </bean>
+</beans>

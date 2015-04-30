@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="auditFactoryPostProcessor" class="com.zenika.tech.AuditFactoryPostProcessor"/>
+
+    <bean id="factoryRepositories" class="com.zenika.tech.FactoryRepositories" init-method="initializeData"/>
+
+    <!-- REPOSITORIES -->
+    <bean id="villeRepositroy" factory-bean="factoryRepositories" 
+                               factory-method="createVilleRepository"/>
+                               
+    <bean id="departementRepositroy" factory-bean="factoryRepositories" 
+                                     factory-method="createDepartementRepository"/>
+                                     
+    <bean id="regionRepositroy" factory-bean="factoryRepositories" 
+                                factory-method="createRegionRepository"/>
+                                
+    <bean id="paysRepositroy" factory-bean="factoryRepositories" 
+                              factory-method="createPaysRepository"/>
+</beans>

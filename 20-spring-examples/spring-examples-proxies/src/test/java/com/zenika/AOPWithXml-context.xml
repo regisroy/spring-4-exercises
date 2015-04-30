@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+              http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy>
+        <aop:include name="aopBeanSimple"/>
+    </aop:aspectj-autoproxy>
+
+    <aop:config>
+        <aop:aspect ref="aopBeanSimple">
+            <aop:pointcut id="txMethods"
+                          expression="execution(@org.springframework.transaction.annotation.Transactional * *(..))"/>
+
+            <aop:before method="log" pointcut-ref="txMethods"/>
+        </aop:aspect>
+    </aop:config>
+    
+<!--      and not execution(* com.zenika.bean.*.*NotTransactional(..)) -->
+
+    <bean class="com.zenika.aop.AopBeanSimple" id="aopBeanSimple"/>
+
+</beans>
+
