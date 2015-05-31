@@ -1,9 +1,4 @@
 # TODO
-
-
-
-- exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
-  - si possible, quelles en sont les limitations ?
 - exemple de MetaAnnotation avec un cas tres complique  (http://www.intertech.com/Blog/spring-4-meta-annotations/)
   @com.zenika.Service
   @Transactional(propagation = Propagation.REQUIRES_NEW, timeout = 30, isolation=Isolation.SERIALIZABLE)
@@ -15,9 +10,8 @@
  - Spring security
  - Spring boot
  - Les guides
-- Cycle de vie et Lazy initialisation / FactoryBeanPostProcessor / BeanPostProcessor => **FAIT**
+ - [**SpEL**](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#expressions-language-ref)
 - **Custom scope** / doc Spring () => TODO exemple
-- **SpEL**  (http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#expressions-language-ref)
 - Surcharge **quand Java config / Annotations / xml** => quel est le resultats ? ==> TODO exemple
 - exemple : inner bean xml / Java config : 
   faire un inner bean en Java (cet inner bean est-il manage par spring ?)  => TODO exemple
@@ -37,3 +31,9 @@
   - afficher les infos de l'appli
   - modifier la configuration de log4j
 - Un serveur ActivMQ avec quelques files : Queue & Topic
+ 
+## FAIT
+- exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
+  - si possible, quelles en sont les limitations ?
+- Cycle de vie et Lazy initialisation / FactoryBeanPostProcessor / BeanPostProcessor => **FAIT**
+
