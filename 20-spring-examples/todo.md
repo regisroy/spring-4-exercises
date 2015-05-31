@@ -1,10 +1,10 @@
 # TODO
-- exemple de MetaAnnotation avec un cas tres complique  (http://www.intertech.com/Blog/spring-4-meta-annotations/)
+- exemple de [MetaAnnotation](http://www.intertech.com/Blog/spring-4-meta-annotations) avec un cas tres complique  
   @com.zenika.Service
   @Transactional(propagation = Propagation.REQUIRES_NEW, timeout = 30, isolation=Isolation.SERIALIZABLE)
   @Scope("request")
   @Profile
-- montrer la documentation Spring
+- Montrer la documentation Spring
  - Spring framework
  - Spring plateforme
  - Spring security
