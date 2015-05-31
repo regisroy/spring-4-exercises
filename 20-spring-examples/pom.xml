@@ -21,6 +21,8 @@
 
         <module>spring-example-web-initializer</module>
         <module>spring-example-web-JSR303</module>
+
+        <module>spring-boot-server-files</module>
     </modules>
 
 
