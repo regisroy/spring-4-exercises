@@ -1,6 +1,6 @@
 # TODO
 - exemple de [MetaAnnotation](http://www.intertech.com/Blog/spring-4-meta-annotations) avec un cas tres complique  
-  @com.zenika.Service
+  @com.zenika.service.Service
   @Transactional(propagation = Propagation.REQUIRES_NEW, timeout = 30, isolation=Isolation.SERIALIZABLE)
   @Scope("request")
   @Profile

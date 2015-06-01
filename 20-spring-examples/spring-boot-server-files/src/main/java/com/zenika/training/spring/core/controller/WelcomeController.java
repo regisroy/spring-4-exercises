@@ -1,4 +1,4 @@
-package com.zenika.training.spring.core.controler;
+package com.zenika.training.spring.core.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,8 +8,7 @@ import java.util.Date;
 import java.util.Map;
 
 @Controller
-@SuppressWarnings("unused")
-public class WelcomeControler {
+public class WelcomeController {
 
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {

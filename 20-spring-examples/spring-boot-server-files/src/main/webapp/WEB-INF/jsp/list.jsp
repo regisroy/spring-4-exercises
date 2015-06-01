@@ -5,7 +5,6 @@
 <html lang="fr">
 <body>
 <ul>
-    test
     <%--@elvariable id="files" type="java.util.List"--%>
     <c:forEach items="${files}" var="file">
         <li>

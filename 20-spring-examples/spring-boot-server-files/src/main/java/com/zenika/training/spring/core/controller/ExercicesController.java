@@ -1,4 +1,4 @@
-package com.zenika.training.spring.core.controler;
+package com.zenika.training.spring.core.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +14,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 @Controller
-@SuppressWarnings("unused")
-public class ExercicesControler {
+public class ExercicesController {
 
     @RequestMapping("/list")
     public String listFiles(Model model) throws IOException {

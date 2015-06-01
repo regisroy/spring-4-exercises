@@ -14,6 +14,7 @@
         <module>spring-examples-life-cycle-spel</module>
         <module>spring-examples-aop</module>
         <module>spring-examples-mixed-configuration</module>
+        <module>spring-examples-configuration-xml-annotations-java</module>
         <module>spring-examples-proxies</module>
         <module>spring-examples-change-bean-definition</module>
         <module>spring-examples-weird-java-configuration</module>

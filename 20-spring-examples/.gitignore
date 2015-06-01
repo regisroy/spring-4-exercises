@@ -4,5 +4,6 @@ target
 .classpath
 .settings
 .idea
-
-
+*-QUESTIONS.pdf
+*-REPONSES.pdf
+.directory
