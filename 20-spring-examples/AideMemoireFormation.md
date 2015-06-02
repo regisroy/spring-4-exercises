@@ -7,6 +7,7 @@
 
 ## AOP
 - [pointcut expressions](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#aop-pointcuts-examples)
+- Le mot clé expression pour un pointcut n'est pas unique, il y a aussi call(...), bean(...), .... cf. doc 
 
 ## MétaAnnotations
 - [MetaAnnotation](http://www.intertech.com/Blog/spring-4-meta-annotations)

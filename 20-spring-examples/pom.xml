@@ -13,17 +13,18 @@
     	<module>parent-spring-examples</module>
         <module>spring-examples-life-cycle-spel</module>
         <module>spring-examples-aop</module>
-        <module>spring-examples-mixed-configuration</module>
-        <module>spring-examples-configuration-xml-annotations-java</module>
+        <module>spring-examples-configurations-misc</module>
+        <module>spring-examples-mixed-config-xml-annotations-java</module>
         <module>spring-examples-proxies</module>
         <module>spring-examples-change-bean-definition</module>
         <module>spring-examples-weird-java-configuration</module>
         <module>spring-examples-lazy</module>
+        <module>spring-examples-activeProfile-methode-and-class</module>
 
         <module>spring-example-web-initializer</module>
         <module>spring-example-web-JSR303</module>
 
-        <module>spring-boot-server-files</module>
+        <module>spring-boot-file-server</module>
     </modules>
 
 

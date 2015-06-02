@@ -13,8 +13,8 @@
  - [**SpEL**](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#expressions-language-ref)
 - **Custom scope** / doc Spring () => TODO exemple
 - Surcharge **quand Java config / Annotations / xml** => quel est le resultats ? ==> TODO exemple
-- exemple : inner bean xml / Java config : 
-  faire un inner bean en Java (cet inner bean est-il manage par spring ?)  => TODO exemple
+- **inner bean** xml / Java config
+  - faire un inner bean en Java (cet inner bean est-il manage par spring ?)  => TODO exemple
 - **SpEL :** quels sont les mécanismes dans Spring pour évaluer les expressions SpEL ? (BeanFactoryPostProcessor / BeanPostProcessor / Autre ) ==> TODO exemple
 - **Test :** Lancer un test avec @ContextConfiguration sans liste de configuration explicite 
   avec une config java public static class @Configuration xxx{} ET un fichier xml NomCalssText-context.xml
@@ -25,13 +25,21 @@
   ==> TODO exemple
 - **Security :** si on ajoute 2 fois un filtre aprés le login par ex. est-ce que l'on obtient 2 filtres après ou le 2e ajout écrase le premier. Quel ordre aurons-nous, si 2 ajouts. Ce sera l'ordre d'ajout ?  ==> TODO exemple
 - **Faire une FAQ** ==> TODO
-- JMX : un server avec une application Hibernate / log4j
+- **JMX** : un server avec une application Hibernate / log4j
  - scenario : 
   - readme d'installation
   - afficher les infos de l'appli
   - modifier la configuration de log4j
 - Un serveur ActivMQ avec quelques files : Queue & Topic
- 
+- Test spring : appliquer @ActiveProfiles sur Class de test et sur des méthodes de test en même temps => que se passe-t-il ?
+- **AOP** : Que se passe t-il quand j'applique plusieurs Advice de type @Around sur le même JoinPoint ?
+- **Transaction**  : comment sont traitées traitées les Checked Exceptions ?????? 
+- ATTENTION : revoir les expressions poincut dans le détail
+
+## FAQ
+- Data Access Exception : Spring arrive t-il à détecter l'optimistic Locking ou faut-il lancer l'exception **OptimisticLockingFailureException**
+ - => Non détecté par la DB elle-même (Géré par le DAO)
+
 ## FAIT
 - exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
   - si possible, quelles en sont les limitations ?
