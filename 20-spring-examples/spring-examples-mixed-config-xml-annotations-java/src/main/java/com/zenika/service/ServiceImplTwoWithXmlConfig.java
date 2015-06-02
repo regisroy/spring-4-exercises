@@ -1,10 +1,10 @@
 package com.zenika.service;
 
-public class ServiceImplTwo implements Service {
+public class ServiceImplTwoWithXmlConfig implements Service {
 
     private StringBuilder recorder;
 
-    public ServiceImplTwo(StringBuilder recorder) {
+    public ServiceImplTwoWithXmlConfig(StringBuilder recorder) {
         this.recorder = recorder;
     }
 

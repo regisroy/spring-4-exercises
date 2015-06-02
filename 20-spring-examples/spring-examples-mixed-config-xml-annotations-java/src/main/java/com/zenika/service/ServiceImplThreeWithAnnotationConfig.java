@@ -1,10 +1,14 @@
 package com.zenika.service;
 
-public class ServiceImplOne implements Service {
+import org.springframework.beans.factory.annotation.Autowired;
+
+@org.springframework.stereotype.Service("service")
+public class ServiceImplThreeWithAnnotationConfig implements Service {
 
     private StringBuilder recorder;
 
-    public ServiceImplOne(StringBuilder recorder) {
+    @Autowired
+    public ServiceImplThreeWithAnnotationConfig(StringBuilder recorder) {
         this.recorder = recorder;
     }
 
@@ -13,6 +17,4 @@ public class ServiceImplOne implements Service {
         recorder.append("Instance : ").append(toString()).append("\n");
         recorder.append("   Execution de ").append(this.getClass().getName()).append(".execute()\n");
     }
-
-
 }
