@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="mBeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean">
+        <property name="locateExistingServerIfPossible" value="true"/>
+    </bean>
+
+
+    <!-- Root Context: defines shared resources visible to all other web components-->
+    <bean id="jmxExporter" class="org.springframework.jmx.export.MBeanExporter">
+        <property name="server" ref="mBeanServer"/>
+        <property name="beans">
+            <map>
+                <entry key="Spring-example:type=hibernate-statistics" value-ref="hibernateStatisticsMBean" />
+                <entry key="Spring-example:type=log4j,name=log4jConfigurator" value-ref="log4jConfigurator"/>
+                <entry key="Spring-example:type=service,name=LaPosteService" value-ref="laPosteService"/>
+            </map>
+        </property>
+    </bean>
+</beans>

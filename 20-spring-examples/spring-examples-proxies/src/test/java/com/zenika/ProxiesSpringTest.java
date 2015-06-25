@@ -65,7 +65,7 @@ public class ProxiesSpringTest {
                                   .startsWith("class com.sun.proxy.$Proxy");
 
         // !!! ATTENTION ici PB !!! java.lang.ClassCastException
-        ServiceImplementationTransactional implementationTransactional = (ServiceImplementationTransactional)serviceTransactional;
+//        ServiceImplementationTransactional implementationTransactional = (ServiceImplementationTransactional)serviceTransactional;
 	}
 	
 	

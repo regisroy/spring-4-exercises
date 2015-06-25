@@ -35,10 +35,12 @@
 - **AOP** : Que se passe t-il quand j'applique plusieurs Advice de type @Around sur le même JoinPoint ?
 - **Transaction**  : comment sont traitées traitées les Checked Exceptions ?????? 
 - ATTENTION : revoir les expressions poincut dans le détail
-
+- **AOP :** quand pls aspects sur le même bean, combien y a t-il de proxies ?
+- Testing : **@Sql** - comment fait-on quand nous avons plusieurs datasources ?
 ## FAQ
 - Data Access Exception : Spring arrive t-il à détecter l'optimistic Locking ou faut-il lancer l'exception **OptimisticLockingFailureException**
  - => Non détecté par la DB elle-même (Géré par le DAO)
+- Gestion des exceptions ORM : il est nécessaire de déclarer le BeanPostProcessor
 
 ## FAIT
 - exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 

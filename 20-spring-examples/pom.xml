@@ -25,6 +25,8 @@
         <module>spring-example-web-JSR303</module>
 
         <module>spring-boot-file-server</module>
+        <module>spring-examples-jmx-hibernate-log4j</module>
+        <module>spring-zip-examples</module>
     </modules>
 
 
