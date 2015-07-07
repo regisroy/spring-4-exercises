@@ -41,6 +41,10 @@
 - Data Access Exception : Spring arrive t-il à détecter l'optimistic Locking ou faut-il lancer l'exception **OptimisticLockingFailureException**
  - => Non détecté par la DB elle-même (Géré par le DAO)
 - Gestion des exceptions ORM : il est nécessaire de déclarer le BeanPostProcessor
+### Sql - Data access
+- exemple utilisation translation exception / exemple sans 
+ - pour JdbcTemplate
+ - pour Hibernate
 
 ## FAIT
 - exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
