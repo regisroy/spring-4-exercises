@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class WeirdConfigurationWithoutAnnotationTest {
 
 	/*
-	 * Test : tester si il est possible de créer un bean de configuration sans annotation @Configuration
+	 * Test : tester si il est possible de creer un bean de configuration sans annotation @Configuration
 	 *
 	 * ici :
 	 *    - utilisation @Directement de new ApplicationContext()
@@ -25,7 +25,7 @@ public class WeirdConfigurationWithoutAnnotationTest {
 	}
 
 	/*
-	 * Test : tester si il est possible de créer un bean de configuration sans annotation @Configuration
+	 * Test : tester si il est possible de creer un bean de configuration sans annotation @Configuration
 	 *
 	 * ici :
 	 *    - - utilisation @Directement de new ApplicationContext()

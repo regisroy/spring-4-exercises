@@ -51,3 +51,11 @@
   - si possible, quelles en sont les limitations ?
 - Cycle de vie et Lazy initialisation / FactoryBeanPostProcessor / BeanPostProcessor => **FAIT**
 
+## PROBLEMES  
+spring-boot-lab :   
+  - les dépendances spring boot ne sont pas présentent, ils faut les obtenir.  
+    Pour cela il faut mettre maven en mode online.  
+    - modif présérences Générales Eclipse : Window  -> Préférences -> Maven -> User settings (éditer settings.xml et mettre <offline>false</offline>)
+    - runner maven : décocher 'offline' (sur projet booot-lab : run As -> Run configuration)  
+  - lab complètement bancal (le refaire complètement)  
+  - ...  viewResolver / .schema / .

@@ -12,10 +12,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class JmxTest {
 
     @Test
-    @Ignore("Devrait etre fait par un main")
+//    @Ignore("Devrait etre fait par un main, mais là comme ca je bénéficie du runner Spring")
     public void testName() throws Exception {
 
-        System.out.println("\nJmxTest.testName");
+        System.out.println("\nJmxTest.testName\n");
 
         System.out.print("Ready.  Press Enter to Stop...");
         System.in.read();

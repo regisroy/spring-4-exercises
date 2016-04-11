@@ -29,7 +29,7 @@ import java.util.Properties;
 @Configuration
 //@ComponentScan("com.zenika.training.spring.core.repository")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages="com.zenika.training.spring.core.repo")
+@EnableJpaRepositories("com.zenika.training.spring.core.repo")
 //@ImportResource("com/zenika/training/spring/core/spring/application-context.xml")
 public class AppConfig {
 

@@ -32,7 +32,7 @@ public class PosteServiceTest {
     public void test1_ProfileVeloDE() throws Exception {
         posteNationale.distribuerLeCourrierDansTonPays();
         Assertions.assertThat(recorder.toString()).isEqualTo("ALLEMAGNE\n" +
-                                                                     "Le courrier est transporte A VELO\n");
+                                                             "Le courrier est transporte A VELO\n");
     }
 
     @Test
@@ -41,7 +41,7 @@ public class PosteServiceTest {
     public void test2_ProfileChevalFR() throws Exception {
         posteNationale.distribuerLeCourrierDansTonPays();
         Assertions.assertThat(recorder.toString()).isEqualTo("FRANCE\n" +
-                                                                     "Le courrier est transporte A CHEVAL\n");
+                                                             "Le courrier est transporte A CHEVAL\n");
     }
 
     @org.springframework.context.annotation.Configuration

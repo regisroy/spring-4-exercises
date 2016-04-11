@@ -30,6 +30,8 @@ public class LaPosteBelge implements LaPosteService {
         logger.info(">>>    distribuer en level INFO ..................");
         logger.debug(">>>    distribuer en level DEBUG ____________________");
         logger.warn(">>>    distribuer en level WARNING !!!!!!!!!!!!!!!!!");
+
+        logger.fatal("\n");
     }
 
     public int getCumulNombreDeLettres() {

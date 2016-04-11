@@ -18,7 +18,7 @@ public class WeirdConfigurationWithAnnotation_2_Test {
 	ApplicationContext context;
 
 	/*
-	 * Test : tester si il est possible de créer un bean de configuration sans annotation @Configuration
+	 * Test : tester si il est possible de creer un bean de configuration sans annotation @Configuration
 	 *
 	 * ici :
 	 *    - utilisation @ContextConfiguration
