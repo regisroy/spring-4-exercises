@@ -45,6 +45,10 @@
 - exemple utilisation translation exception / exemple sans 
  - pour JdbcTemplate
  - pour Hibernate
+ 
+## Questions ?
+- [testing] comment utiliser @Sql une seule fois en deébut de la classe de test comme un @BeforeClass
+- [Data management:Cache] faire un evict d'une clé particulière
 
 ## FAIT
 - exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
@@ -59,3 +63,9 @@ spring-boot-lab :
     - runner maven : décocher 'offline' (sur projet booot-lab : run As -> Run configuration)  
   - lab complètement bancal (le refaire complètement)  
   - ...  viewResolver / .schema / .
+  
+## La certification
+- http://javaetmoi.com/2016/01/spring-core-4-2-certification-mock-exam/
+- http://javaetmoi.com/wp-content/uploads/2016/01/spring-certification-4_2-mock-exam-antoine.pdf
+
+

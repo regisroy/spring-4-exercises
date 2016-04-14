@@ -8,9 +8,11 @@ import java.util.Date;
 import java.util.Map;
 
 @Controller
-public class WelcomeController {
+public class WelcomeController2 {
 
-    @RequestMapping("/")
+//    @RequestMapping("/")
+    //Décommenter si on veut tester de mapper 2 méthode sur la même URL
+    //Même url que dans le controller Welcome
     public String welcome(Map<String, Object> model) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("DD/MM/YYYY");
         model.put("time", simpleDateFormat.format(new Date()));
