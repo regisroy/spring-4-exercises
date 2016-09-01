@@ -49,6 +49,9 @@
 ## Questions ?
 - [testing] comment utiliser @Sql une seule fois en deébut de la classe de test comme un @BeforeClass
 - [Data management:Cache] faire un evict d'une clé particulière
+- Spring security & ACL : Sécurisation de domainObjects en plus des méthodes et des Urls 
+   - (http://docs.spring.io/spring-security/site/docs/4.0.4.RELEASE/reference/htmlsingle/#domain-acls)
+
 
 ## FAIT
 - exemple de Classe Java de configuration sans @Configuration ==> **FAIT : projet spring-examples-weird-java-configuration** 
@@ -57,7 +60,7 @@
 
 ## PROBLEMES  
 spring-boot-lab :   
-  - les dépendances spring boot ne sont pas présentent, ils faut les obtenir.  
+  - les dépendances spring boot ne sont pas présententent, ils faut les obtenir.  
     Pour cela il faut mettre maven en mode online.  
     - modif présérences Générales Eclipse : Window  -> Préférences -> Maven -> User settings (éditer settings.xml et mettre <offline>false</offline>)
     - runner maven : décocher 'offline' (sur projet booot-lab : run As -> Run configuration)  

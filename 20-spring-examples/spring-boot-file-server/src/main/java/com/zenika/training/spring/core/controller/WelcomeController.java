@@ -17,7 +17,7 @@ public class WelcomeController {
         model.put("titre", "Spring core version 4.2");
         model.put("message", "Bonjour,");
         model.put("nom", "Régis ROY");
-        model.put("societe", "Zenika");
+        model.put("societe", "Zenika Paris");
         model.put("email", "regis.roy@zenika.com");
 
         return "welcome";

@@ -16,9 +16,9 @@
     </parent>
 
     <properties>
-        <spring.version>4.2.3.RELEASE</spring.version>
-        <spring-data-jpa.version>1.9.1.RELEASE</spring-data-jpa.version>
-        <spring-security.version>4.0.3.RELEASE</spring-security.version>
+        <spring.version>4.3.2.RELEASE</spring.version>
+        <spring-data-jpa.version>1.10.2.RELEASE</spring-data-jpa.version>
+        <spring-security.version>4.1.3.RELEASE</spring-security.version>
         <spring-ws.version>2.2.1.RELEASE</spring-ws.version>
     </properties>
 
@@ -296,11 +296,17 @@
             <resource>
                 <directory>src/main/java</directory>
             </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
         </resources>
         
         <testResources>
             <testResource>
                 <directory>src/test/java</directory>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
         
